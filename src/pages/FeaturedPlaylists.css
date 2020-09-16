@@ -1,0 +1,15 @@
+.featuredPlaylists{
+  margin-left: 30px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color:  rgb(30, 30, 30);
+  width: 200px;
+  height: 300px;
+  
+}
+
+.featuredPlaylists:hover {
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.8;
+}

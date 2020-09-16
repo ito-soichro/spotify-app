@@ -3,7 +3,6 @@ import React, { createContext, useContext, useReducer } from "react";
 
   // 用意確認
 export const DataLayerContext = createContext();
-console.log("DataLayerContext👉",DataLayerContext)
 
 export const DataLayer = ({initialState, reducer, children }) => {
   return (

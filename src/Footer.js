@@ -14,11 +14,7 @@ import { useDataLayerValue }  from "./DataLayer";
 
 function Footer({spotify}) {
   const [{token, item, playing} ,dispatch] = useDataLayerValue();
-  // console.log("token👉",token)
-  // console.log("item👉",item)
-  // console.log("playing👉",playing)
-
-
+  
   useEffect(() => {
     spotify.getMyCurrentPlaybackState().then((response) => {
 

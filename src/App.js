@@ -1,19 +1,28 @@
 import React, { useEffect, useState} from 'react';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import Login from './Login';
 import { getTokenFromUrl } from './spotify';
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./Player";
+import Home from "./pages/Home";
+import Search from "./pages/Search";
+import FeaturedList from "./pages/FeaturedList";
+import SearchPlaylists from "./pages/SearchPlaylists";
 import { useDataLayerValue }  from "./DataLayer";
+
+
+
 
 //SpotifyAPIの全てを取得
 const spotify = new SpotifyWebApi();
-// console.log("spotify👉",spotify);
 
 function App() {
   const [token, setToken] = useState(null);
   // 要確認
   const [{ user }, dispatch] = useDataLayerValue();
+
+  
 
   // Run code based on a given condition
   useEffect(() => {
@@ -26,6 +35,7 @@ function App() {
     if (_token) {
       setToken(_token);
       spotify.setAccessToken(_token);
+      console.log("_token",_token)
 
       // spotifyから自分のデータを呼び出す
       spotify.getMe().then((user) =>  {
@@ -34,37 +44,49 @@ function App() {
           user: user,
         });
       });
+      // console.log("テスト２",spotify.getUserPlaylists) 
 
       spotify.getUserPlaylists().then((playlists) => {
-        console.log("playlists🎵",playlists);
+        // console.log("playlists🎵",playlists);
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists,
         });
       });
 
-      // sidebarOPtionにて、redux経由で入力（決定）されたIDを取得する
-      // getPlaylistにこのIDを入れる
+      spotify.getFeaturedPlaylists().then((featuredplaylists) => {
+        dispatch({
+          type: "SET_FEATUREDPLAYLISTS",
+          featuredplaylists: featuredplaylists,
+        });
+      });
 
-      // spotify.getPlaylist("33auqWTk2pNUG8k3IVvrtk").then((response) => {
-      //   // console.log("response🎵",response);
-      //   dispatch({
-      //     type: "SET_DISCOVER_WEEKLY",
-      //     discover_weekly: response,
-      //   })
-      // });
+      
+
     }
+    
 
   }, [token, dispatch]);
 
-  // console.log("user👨",user);
-  // console.log("token👽",token);
-
+ 
   return (
     // BEM
-    <div className="App">
-    { token ? <Player spotify={spotify} /> : <Login /> }
+    <div className="App" >
+    { token ? 
+      <Router>
+        <Switch>
+          <Player  exact path="/" spotify={spotify} /> 
+          <Home exact  path="/home" spotify={spotify} /> 
+          <Search exact  path="/Search" spotify={spotify}/>
+          <FeaturedList exact  path="/FeaturedList/:id"  spotify={spotify} />
+          <SearchPlaylists exact  path="/Search/:id"  spotify={spotify} />
+        </Switch>
+      </Router>
+      :  
+     <Login />  
+     }    
     </div>
+
   );
 }
 

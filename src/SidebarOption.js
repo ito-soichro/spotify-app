@@ -2,7 +2,12 @@ import React, { useEffect, useState} from 'react';
 import { getTokenFromUrl } from './spotify';
 import { useDataLayerValue }  from "./DataLayer";
 import SpotifyWebApi from "spotify-web-api-js";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import "./sidebarOption.css";
 
 const spotify = new SpotifyWebApi();
@@ -42,11 +47,13 @@ function SidebarOption({title, Icon, id}) {
     });
   };
 
-  return <div onClick={() => showPlaylist(id)} className="sidebarOption">
-    {Icon && <Icon className="sidebarOption__icon"/>}
-    {Icon ? <h4>{title} </h4> : <p> {title} </p>}
+  return (
     
-  </div>;
+      <div onClick={() => showPlaylist(id)} className="sidebarOption">
+        {Icon && <Icon className="sidebarOption__icon"/>}
+        {Icon ? <h4 to="/home">{title} </h4> : <p> {title} </p>}
+      </div>
+  );
 }
 
 export default SidebarOption

@@ -4,7 +4,7 @@ export const authEndpoint =
 "https://accounts.spotify.com/authorize";
 
 
-// Spotify for Developerから引用
+// // Spotify for Developerから引用
 const redirectUri = "http://localhost:3000/";
 
 const clientID = "f7b768418c9a4246816351ba46e0b52f";
@@ -24,8 +24,6 @@ export const getTokenFromUrl = () => {
     .reduce((initial, item) => {
       let parts = item.split('=');
       initial[parts[0]] = decodeURIComponent(parts[1]);
-      
-
       return initial
     }, {})
 }

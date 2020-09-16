@@ -5,8 +5,8 @@ export const initialState = {
   item: null,
   
   // 開発が終了したら削除...
-  token: 
-  'BQCzSl7JH5PszjuUsiQ5lDrfEvIQ2-ez741VscYadixGozpMOkX62wL0VgG3wjPTmmSjPrfb_bcKc6zdAhReJe9qPhoHwaCpPwJacFbzD0MOU1eeAhQd6pbt-IgMrb4TbUkWkJKKBvLV4W9Er1vQnCaejZz8Dx3jZMwhzxtJfPfyHVkbqonX',
+  // token: 
+  // 'BQCzSl7JH5PszjuUsiQ5lDrfEvIQ2-ez741VscYadixGozpMOkX62wL0VgG3wjPTmmSjPrfb_bcKc6zdAhReJe9qPhoHwaCpPwJacFbzD0MOU1eeAhQd6pbt-IgMrb4TbUkWkJKKBvLV4W9Er1vQnCaejZz8Dx3jZMwhzxtJfPfyHVkbqonX',
 };
 
 const reduser = (state, action) => {
@@ -30,7 +30,6 @@ const reduser = (state, action) => {
 
       case "SET_DISCOVER_WEEKLY":
         return {
-          // 
           ...state,
           discover_weekly: action.discover_weekly,
         };
@@ -46,6 +45,30 @@ const reduser = (state, action) => {
           ...state,
           item: action.item,
         };
+
+        case "SET_FEATUREDPLAYLISTS":
+          return {
+            ...state,
+            featuredplaylists: action.featuredplaylists,
+          };
+
+          case "SET_SEARCHARTISTS":
+          return {
+            ...state,
+            search: action.search,
+          };
+
+          case "SET_FEATUREDTRACKS":
+          return {
+            ...state,
+            featuredtracks: action.featuredtracks,
+          };
+
+          case "SET_SEARCHPLAYLIST":
+          return {
+            ...state,
+            searchplaylist: action.searchplaylist,
+          };
 
       default:
         return state;
