@@ -24,30 +24,24 @@ function App() {
 
   
 
-  // Run code based on a given condition
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
-    // console.log("GET TOKEN 👉", token)
     const _token = hash.access_token;
 
-    // ここわからない
     if (_token) {
       setToken(_token);
       spotify.setAccessToken(_token);
       console.log("_token",_token)
 
-      // spotifyから自分のデータを呼び出す
       spotify.getMe().then((user) =>  {
         dispatch({
           type: "SET_USER",
           user: user,
         });
       });
-      // console.log("テスト２",spotify.getUserPlaylists) 
 
       spotify.getUserPlaylists().then((playlists) => {
-        // console.log("playlists🎵",playlists);
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists,
@@ -70,7 +64,6 @@ function App() {
 
  
   return (
-    
     <div className="App" >
     { token ? 
       <Router>

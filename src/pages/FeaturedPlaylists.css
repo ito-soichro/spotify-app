@@ -13,3 +13,8 @@
   background-color: black;
   opacity: 0.8;
 }
+
+.featuredPlaylists__playlists{
+  text-decoration: none;
+  color: white;
+}

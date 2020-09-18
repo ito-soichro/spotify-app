@@ -1,8 +1,7 @@
 {
-  "name": "spotify-app",
+  "name": "react-app-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mokelab.github.io/react_demo",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -13,8 +12,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "spotify-web-api-js": "^1.5.0",
-    "vs-spotify-api-wrapper": "^1.2.1"
+    "spotify-web-api-js": "^1.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
