@@ -70,7 +70,7 @@ function App() {
 
  
   return (
-    // BEM
+    
     <div className="App" >
     { token ? 
       <Router>
