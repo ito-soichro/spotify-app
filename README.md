@@ -4,9 +4,15 @@ URL:https://spotify-app-pasha1235.web.app/
 
 サービスを使用するには、Spotifyのアカウントを持っている必要があります。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 開発動機
+
+エンターテイメント市場でサブスクによる音楽視聴サービスが上昇しているため、SpotifyAPIを使用したWebアプリケーションの開発をした。
+
 
 ## Available Scripts
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
