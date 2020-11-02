@@ -6,7 +6,6 @@ import SearchResult  from '../SearchPage/SearchResult'
 
 function SearchBody({spotify}) {
   const [{ search },dispatch] = useDataLayerValue();
-console.log("searchの中身",search )
   return (
     <div className="SearchBody">
       <Header spotify={spotify} />

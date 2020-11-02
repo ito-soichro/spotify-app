@@ -45,7 +45,6 @@ function Header() {
               e.preventDefault()
               let value =  e.target.value
                 spotify.searchPlaylists(value).then((search) => {
-                  console.log("確認",search)
                   dispatch({
                   type: "SET_SEARCHARTISTS",
                   search: search,

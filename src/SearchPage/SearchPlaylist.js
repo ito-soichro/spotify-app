@@ -9,11 +9,8 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 function SearchPlaylist({spotify}) {
   const [{ searchplaylist } , dispatch] = useDataLayerValue();
-  console.log("searchplaylist",)
 
   const playPlaylist = () => {
-    
-
     spotify.play({
       context_uri: `spotify:playlist:${searchplaylist?.id}`,
     })
