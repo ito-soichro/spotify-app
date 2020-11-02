@@ -1,27 +1,26 @@
-import React from 'react'
-import "../pages/FeaturedListBody.css"
-import Header from '../Header';
-import SongRow from "../SongRow";
+import React from 'react';
+import "./Body.css";
+import Header from '../Header/Header';
+import SongRow from "../SongPlay/SongRow";
 import { useDataLayerValue } from "../DataLayer";
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 
-
-function FeaturedListBody({spotify}) {
-  const [{ featuredtracks } , dispatch] = useDataLayerValue();
+function Body({spotify}) {
+  const [{ discover_weekly } , dispatch] = useDataLayerValue();
+  
 
   const playPlaylist = () => {
-    
 
     spotify.play({
-      context_uri: `spotify:playlist:${featuredtracks?.id}`,
+      context_uri: `spotify:playlist:${discover_weekly?.id}`,
     })
     
     .then((res) => {
       spotify.getMyCurrentPlayingTrack().then((response) => {
-
+        
         dispatch({
           type:"SET_ITEM",
           item: response.item,
@@ -33,7 +32,6 @@ function FeaturedListBody({spotify}) {
       });
     });
   };
-  
   const playSong = (id) => {
     spotify
       .play({
@@ -54,21 +52,22 @@ function FeaturedListBody({spotify}) {
   };
   
 
-
+  
   return (
-    <div className="FeaturedListBody"  >
+    <div className="body">
       <Header spotify={spotify} />
       <div className="body__info">
-      <img 
-          src={featuredtracks?.images[0].url}
+        <img 
+          src={discover_weekly?.images[0].url}
           alt=""
           />
-       <div className="body__infoText">
+        <div className="body__infoText">
           <strong>PLAYLIST</strong>
-          <h2>{featuredtracks?.name}</h2>
-          <p>{featuredtracks?.description}</p>
+          <h2>{discover_weekly?.name}</h2>
+          <p>{discover_weekly?.description}</p>
         </div>
       </div>
+      {/* playlistの表示$ */}
       <div classname="body__songs">
         <div className="body__icons">
           <PlayCircleFilledIcon 
@@ -78,15 +77,13 @@ function FeaturedListBody({spotify}) {
           <FavoriteIcon fontSize="large"/>
           <MoreHorizIcon />
         </div>
-          {featuredtracks?.tracks.items.map((item) => (
-            <SongRow 
-            playSong={playSong} 
-             track={item.track} 
-             />
-            ))}
+          {/* List of songs */}
+          {discover_weekly?.tracks.items.map((item) => (
+            <SongRow playSong={playSong} track={item.track} />
+          ))}
       </div>
     </div>
   )
 }
 
-export default FeaturedListBody
+export default Body

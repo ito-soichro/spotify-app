@@ -4,14 +4,12 @@ import './App.css';
 import Login from './Login';
 import { getTokenFromUrl } from './spotify';
 import SpotifyWebApi from "spotify-web-api-js";
-import Player from "./Player";
-import Home from "./pages/Home";
-import Search from "./pages/Search";
-import FeaturedList from "./pages/FeaturedList";
-import SearchPlaylists from "./pages/SearchPlaylists";
+import Player from "./SongPlay/Player";
+import Home from "./RecommendPage/Home";
+import Search from "./SearchPage/Search";
+import FeaturedList from "./RecommendPage/RecommendList";
+import SearchPlaylists from "./SearchPage/SearchPlaylists";
 import { useDataLayerValue }  from "./DataLayer";
-
-
 
 
 //SpotifyAPIの全てを取得
@@ -19,10 +17,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   const [token, setToken] = useState(null);
-  // 要確認
   const [{ user }, dispatch] = useDataLayerValue();
-
-  
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -54,12 +49,8 @@ function App() {
           featuredplaylists: featuredplaylists,
         });
       });
-
-      
-
     }
     
-
   }, [token, dispatch]);
 
  

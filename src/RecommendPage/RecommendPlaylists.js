@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import "../pages/FeaturedPlaylists.css";
+import "../RecommendPage/RecommendPlaylists.css";
 import { useDataLayerValue } from "../DataLayer";
 import { useHistory } from 'react-router-dom'
 import { getTokenFromUrl } from '../spotify';
@@ -27,10 +27,7 @@ function FeaturedPlaylists({images,name,id}) {
 
   const getFeaturedPlaylists = e => {
     e.preventDefault()
-    console.log("動作確認①")
     spotify.getPlaylist(id).then((featuredtracks) => {
-      console.log("動作確認②")
-      console.log("featuredtracks確認確認",featuredtracks)
         dispatch({
           type: "SET_FEATUREDTRACKS",
           featuredtracks: featuredtracks,
@@ -47,7 +44,6 @@ function FeaturedPlaylists({images,name,id}) {
          alt="" 
          height="200" width="200"
          />
-        
         <div className="featuredPlaylists__playlists" >
           <h2>{name}</h2>
         </div>

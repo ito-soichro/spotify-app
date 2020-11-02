@@ -1,7 +1,7 @@
 import React from 'react'
-import Sidebar from "../Sidebar";
-import FeaturedListBody from '../pages/FeaturedListBody';
-import Footer from '../Footer';
+import Sidebar from "../SideBar/Sidebar";
+import FeaturedListBody from '../RecommendPage/RecommendListBody';
+import Footer from '../Footer/Footer';
 
 
 function FeaturedList({spotify}) {

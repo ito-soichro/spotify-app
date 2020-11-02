@@ -1,7 +1,7 @@
 import React from 'react'
-import Sidebar from "../Sidebar";
-import HomeBody from '../pages/HomeBody';
-import Footer from '../Footer';
+import Sidebar from "../SideBar/Sidebar";
+import HomeBody from '../RecommendPage/HomeBody';
+import Footer from '../Footer/Footer';
 
 
 function Home({spotify}) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import "../pages/SearchResult.css";
+import "../SearchPage/SearchResult.css";
 import { useDataLayerValue } from "../DataLayer";
 import { useHistory } from 'react-router-dom'
 // import { getTokenFromUrl } from '../spotify';
