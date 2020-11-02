@@ -1,5 +1,5 @@
 import React from 'react'
-import "../RecommendPage/RecommendListBody.css"
+import "../RecommendPage/RecommendListBody.scss"
 import Header from '../Header/Header';
 import SongRow from "../SongPlay/SongRow";
 import { useDataLayerValue } from "../DataLayer";

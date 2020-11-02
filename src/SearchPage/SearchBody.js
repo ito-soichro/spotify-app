@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../Header/Header';
-import "../SearchPage/SearchBody.css"
+import "../SearchPage/SearchBody.scss"
 import { useDataLayerValue } from '../DataLayer'
 import SearchResult  from '../SearchPage/SearchResult'
 

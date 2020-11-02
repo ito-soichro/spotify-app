@@ -8,7 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import "./sidebarOption.css";
+import "./sidebarOption.scss";
 
 const spotify = new SpotifyWebApi();
 
@@ -29,7 +29,6 @@ function SidebarOption({title, Icon, id}) {
 
   }, [token, dispatch]);
 
-  // 左側のプレイリストが選択されて右を切り替えてい関数
   const showPlaylist = (id) => {
     spotify.getPlaylist(id).then((response) => {
       dispatch({
@@ -40,7 +39,6 @@ function SidebarOption({title, Icon, id}) {
   };
 
   return (
-    
       <div onClick={() => showPlaylist(id)} className="sidebarOption">
         {Icon && <Icon className="sidebarOption__icon"/>}
         {Icon ? <h4 to="/home">{title} </h4> : <p> {title} </p>}

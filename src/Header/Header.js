@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react'
-import "./Header.css"
+import "./Header.scss"
 import { getTokenFromUrl } from '../spotify';
 import SearchIcon from '@material-ui/icons/Search';
 import {Avatar} from "@material-ui/core";
@@ -11,7 +11,6 @@ const spotify = new SpotifyWebApi();
 
 function Header() {
   const [token, setToken] = useState(null);
-  // // 要確認
   const [{ user,value }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
@@ -22,9 +21,6 @@ function Header() {
     if (_token) {
       setToken(_token);
       spotify.setAccessToken(_token)
-
-      // sidebarOPtionにて、redux経由で入力（決定）されたIDを取得する
-      // getPlaylistにこのIDを入れる
     }
 
   }, [token, dispatch]);
@@ -56,8 +52,7 @@ function Header() {
         <button type="submit"><SearchIcon /></button>
       </form>
     </div>
-   
-   
+
     <div className="header__rigth">
       <Avatar src={user?.images[0]?.url} alt={user?.display_name}/>
       <h4>{user?.display_name}</h4>

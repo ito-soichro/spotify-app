@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import "../RecommendPage/RecommendPlaylists.css";
+import "../RecommendPage/RecommendPlaylists.scss";
 import { useDataLayerValue } from "../DataLayer";
 import { useHistory } from 'react-router-dom'
 import { getTokenFromUrl } from '../spotify';
