@@ -6,7 +6,7 @@ function Login() {
   return (
     <div className="login">
 
-      <img src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg" 
+      <img src="https://hd2.tudocdn.net/733420?w=646&h=284"
       alt="" 
       />
 
