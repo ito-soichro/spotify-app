@@ -1,6 +1,6 @@
 import React from 'react'
-import "../SearchPage/SearchResult.scss";
-import { useDataLayerValue } from "../DataLayer";
+import "../searchPage/SearchResult.scss";
+import { useDataLayerValue } from "../../DataLayer";
 import { useHistory } from 'react-router-dom'
 // import { getTokenFromUrl } from '../spotify';
 import SpotifyWebApi from "spotify-web-api-js";

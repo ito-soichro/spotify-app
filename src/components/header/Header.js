@@ -1,9 +1,9 @@
 import React, { useEffect, useState} from 'react'
 import "./Header.scss"
-import { getTokenFromUrl } from '../spotify';
+import { getTokenFromUrl } from '../../spotify';
 import SearchIcon from '@material-ui/icons/Search';
 import {Avatar} from "@material-ui/core";
-import { useDataLayerValue } from "../DataLayer";
+import { useDataLayerValue } from "../../DataLayer";
 import { useHistory } from 'react-router-dom'
 import SpotifyWebApi from "spotify-web-api-js";
 

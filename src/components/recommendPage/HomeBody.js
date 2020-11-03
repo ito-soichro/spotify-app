@@ -1,8 +1,8 @@
 import React from 'react'
-import "../RecommendPage/HomeBody.scss"
-import Header from '../Header/Header';
-import { useDataLayerValue } from '../DataLayer'
-import FeaturedPlaylists from '../RecommendPage/RecommendPlaylists'
+import "../recommendPage/HomeBody.scss"
+import Header from '../../components/header/Header';
+import { useDataLayerValue } from '../../DataLayer'
+import FeaturedPlaylists from '../recommendPage/RecommendPlaylists'
 
 function HomeBody({spotify}) {
   const [{ featuredplaylists },dispatch] = useDataLayerValue(); 

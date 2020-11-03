@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
-import { getTokenFromUrl } from '../spotify';
-import { useDataLayerValue }  from "../DataLayer";
+import { getTokenFromUrl } from '../../spotify';
+import { useDataLayerValue }  from "../../DataLayer";
 import SpotifyWebApi from "spotify-web-api-js";
 import {
   BrowserRouter as Router,

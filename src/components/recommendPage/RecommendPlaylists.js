@@ -1,8 +1,8 @@
 import React, { useEffect, useState} from 'react';
-import "../RecommendPage/RecommendPlaylists.scss";
-import { useDataLayerValue } from "../DataLayer";
+import "../recommendPage/RecommendPlaylists.scss";
+import { useDataLayerValue } from "../../DataLayer";
 import { useHistory } from 'react-router-dom'
-import { getTokenFromUrl } from '../spotify';
+import { getTokenFromUrl } from '../../spotify';
 import SpotifyWebApi from "spotify-web-api-js";
 import {
   BrowserRouter as Router,

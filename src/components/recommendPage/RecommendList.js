@@ -1,9 +1,10 @@
 import React from 'react'
-import Sidebar from "../SideBar/Sidebar";
-import FeaturedListBody from '../SearchPage/SearchPlaylist';
-import Footer from '../Footer/Footer';
+import Sidebar from "../../components/sidebar/Sidebar";
+import FeaturedListBody from '../recommendPage/RecommendListBody';
+import Footer from '../../components/footer/Footer';
 
-function SearchPlaylists({spotify}) {
+
+function FeaturedList({spotify}) {
   return (
     <div className="player">
       <div className="player__body">
@@ -15,4 +16,4 @@ function SearchPlaylists({spotify}) {
   )
 }
 
-export default SearchPlaylists
+export default FeaturedList

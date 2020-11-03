@@ -1,13 +1,13 @@
 import React, { useEffect, useState} from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Login from './Login';
+import Login from './components/login/Login';
 import { getTokenFromUrl } from './spotify';
 import SpotifyWebApi from "spotify-web-api-js";
-import Player from "./SongPlay/Player";
-import Home from "./RecommendPage/Home";
-import Search from "./SearchPage/Search";
-import FeaturedList from "./RecommendPage/RecommendList";
-import SearchPlaylists from "./SearchPage/SearchPlaylists";
+import Player from "./components/songplay/Player";
+import Home from "./components/recommendPage/Home";
+import Search from "./components/searchPage/Search";
+import FeaturedList from "./components/recommendPage/RecommendList";
+import SearchPlaylists from "./components/searchPage/SearchPlaylists";
 import { useDataLayerValue }  from "./DataLayer";
 
 

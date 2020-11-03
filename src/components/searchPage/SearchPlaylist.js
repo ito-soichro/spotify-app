@@ -1,26 +1,23 @@
-import React from 'react';
-import "./Body.scss";
-import Header from '../Header/Header';
-import SongRow from "../SongPlay/SongRow";
-import { useDataLayerValue } from "../DataLayer";
+import React from 'react'
+import "../../components/recommendPage/RecommendListBody.scss"
+import Header from '../../components/header/Header';
+import SongRow from "../../components/songplay/SongRow";
+import { useDataLayerValue } from "../../DataLayer";
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
-
-function Body({spotify}) {
-  const [{ discover_weekly } , dispatch] = useDataLayerValue();
-  
+function SearchPlaylist({spotify}) {
+  const [{ searchplaylist } , dispatch] = useDataLayerValue();
 
   const playPlaylist = () => {
-
     spotify.play({
-      context_uri: `spotify:playlist:${discover_weekly?.id}`,
+      context_uri: `spotify:playlist:${searchplaylist?.id}`,
     })
     
     .then((res) => {
       spotify.getMyCurrentPlayingTrack().then((response) => {
-        
+
         dispatch({
           type:"SET_ITEM",
           item: response.item,
@@ -32,6 +29,7 @@ function Body({spotify}) {
       });
     });
   };
+  
   const playSong = (id) => {
     spotify
       .play({
@@ -52,22 +50,20 @@ function Body({spotify}) {
   };
   
 
-  
   return (
-    <div className="body">
+    <div className="FeaturedListBody"  >
       <Header spotify={spotify} />
       <div className="body__info">
-        <img 
-          src={discover_weekly?.images[0].url}
+      <img 
+          src={searchplaylist?.images[0].url}
           alt=""
           />
-        <div className="body__infoText">
+       <div className="body__infoText">
           <strong>PLAYLIST</strong>
-          <h2>{discover_weekly?.name}</h2>
-          <p>{discover_weekly?.description}</p>
+          <h2>{searchplaylist?.name}</h2>
+          <p>{searchplaylist?.description}</p>
         </div>
       </div>
-      {/* playlistの表示$ */}
       <div classname="body__songs">
         <div className="body__icons">
           <PlayCircleFilledIcon 
@@ -77,13 +73,15 @@ function Body({spotify}) {
           <FavoriteIcon fontSize="large"/>
           <MoreHorizIcon />
         </div>
-          {/* List of songs */}
-          {discover_weekly?.tracks.items.map((item) => (
-            <SongRow playSong={playSong} track={item.track} />
-          ))}
+          {searchplaylist?.tracks.items.map((item) => (
+            <SongRow 
+            playSong={playSong} 
+             track={item.track} 
+             />
+            ))}
       </div>
-    </div>
+    </div> 
   )
 }
 
-export default Body
+export default SearchPlaylist
