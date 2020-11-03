@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from "../../components/sidebar/Sidebar";
-import FeaturedListBody from '../recommendPage/RecommendListBody';
+import FeaturedListBody from '../recommend/RecommendListBody';
 import Footer from '../../components/footer/Footer';
 
 

@@ -4,10 +4,10 @@ import Login from './components/login/Login';
 import { getTokenFromUrl } from './spotify';
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./components/songplay/Player";
-import Home from "./components/recommendPage/Home";
-import Search from "./components/searchPage/Search";
-import FeaturedList from "./components/recommendPage/RecommendList";
-import SearchPlaylists from "./components/searchPage/SearchPlaylists";
+import Home from "./components/recommend/Home";
+import Search from "./components/search/Search";
+import FeaturedList from "./components/recommend/RecommendList";
+import SearchPlaylists from "./components/search/SearchPlaylists";
 import { useDataLayerValue }  from "./DataLayer";
 
 

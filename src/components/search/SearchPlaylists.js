@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from "../../components/sidebar/Sidebar";
-import FeaturedListBody from '../searchPage/SearchPlaylist';
+import FeaturedListBody from '../search/SearchPlaylist';
 import Footer from '../../components/footer/Footer';
 
 function SearchPlaylists({spotify}) {

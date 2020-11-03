@@ -1,21 +1,19 @@
 import React from 'react'
 import Sidebar from "../../components/sidebar/Sidebar";
-import SearchBody from '../searchPage/SearchBody';
+import HomeBody from '../recommend/HomeBody';
 import Footer from '../../components/footer/Footer';
 
 
-
-function Search({spotify}) {
+function Home({spotify}) {
   return (
     <div className="player">
-      <div className="player__body">
-        <Sidebar spotify={spotify}/>
-        <SearchBody spotify={spotify}/>
+      <div className="player__body" >
+        <Sidebar />
+        <HomeBody spotify={spotify}/>
       </div>
       <Footer spotify={spotify}/>
-    </div>
+</div>
   )
 }
 
-export default Search
- 
+export default Home
