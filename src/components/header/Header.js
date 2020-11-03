@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react'
-import "./Header.scss"
+import "./Header.css"
 import { getTokenFromUrl } from '../../spotify';
 import SearchIcon from '@material-ui/icons/Search';
 import {Avatar} from "@material-ui/core";

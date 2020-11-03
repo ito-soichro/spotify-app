@@ -1,7 +1,7 @@
 import React from 'react';
-import "./Player.scss";
+import "./Player.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-import Body from '../../page/favorite/Body';
+import Body from '../../pages/favorite/Body';
 import Footer from '../../components/footer/Footer';
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Body.scss";
+import "./Body.css";
 import Header from '../../components/header/Header';
 import SongRow from "../../components/songplay/SongRow";
 import { useDataLayerValue } from "../../DataLayer";

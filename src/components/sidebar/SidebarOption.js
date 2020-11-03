@@ -8,7 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import "./sidebarOption.scss";
+import "./sidebarOption.css";
 
 const spotify = new SpotifyWebApi();
 

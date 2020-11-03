@@ -1,5 +1,5 @@
 import React, { useEffect, useState }from 'react'
-import "./Footer.scss"
+import "./Footer.css"
 import ShuffleIcon from '@material-ui/icons/Shuffle';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
