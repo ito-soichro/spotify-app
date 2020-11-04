@@ -39,7 +39,7 @@ function SearchResult({images,name,id}) {
     <div className="featuredPlaylists" onClick={getSearchPlaylists}>    
       <Link onClick={getPlatlistId}>
        {images[0] ? (
-        <div className="img">
+        <div className="displayImg">
          <img  src={images[0].url} alt="" height="200" width="200"/>
          <div className="featuredPlaylists__playlists" >
           <h2>{name}</h2>
