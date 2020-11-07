@@ -6,6 +6,8 @@ import FeaturedPlaylists from '../recommend/RecommendPlaylists'
 
 function HomeBody({spotify}) {
   const [{ featuredplaylists },dispatch] = useDataLayerValue(); 
+
+  
   
   return (
     <div className="homebody" >

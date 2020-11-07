@@ -25,6 +25,7 @@ function SidebarOption({title, Icon, id}) {
     if (_token) {
       setToken(_token);
       spotify.setAccessToken(_token)
+
     }
 
   }, [token, dispatch]);
@@ -39,6 +40,7 @@ function SidebarOption({title, Icon, id}) {
   };
 
   return (
+    
       <div onClick={() => showPlaylist(id)} className="sidebarOption">
         {Icon && <Icon className="sidebarOption__icon"/>}
         {Icon ? <h4 to="/home">{title} </h4> : <p> {title} </p>}
@@ -47,4 +49,3 @@ function SidebarOption({title, Icon, id}) {
 }
 
 export default SidebarOption
-

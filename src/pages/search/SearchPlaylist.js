@@ -64,7 +64,7 @@ function SearchPlaylist({spotify}) {
           <p>{searchplaylist?.description}</p>
         </div>
       </div>
-      <div classname="body__songs">
+      <div className="body__songs">
         <div className="body__icons">
           <PlayCircleFilledIcon 
             className="body__shuffle"
