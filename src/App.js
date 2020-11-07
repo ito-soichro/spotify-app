@@ -1,28 +1,23 @@
 import React, { useEffect, useState} from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import './App.css';
-import Login from './Login';
+import Login from './components/login/Login';
 import { getTokenFromUrl } from './spotify';
 import SpotifyWebApi from "spotify-web-api-js";
-import Player from "./Player";
-import Home from "./pages/Home";
-import Search from "./pages/Search";
-import FeaturedList from "./pages/FeaturedList";
-import SearchPlaylists from "./pages/SearchPlaylists";
+import Player from "./components/songplay/Player";
+import Home from "./pages/recommend/Home";
+import Search from "./pages/search/Search";
+import FeaturedList from "./pages/recommend/RecommendList";
+import SearchPlaylists from "./pages/search/SearchPlaylists";
 import { useDataLayerValue }  from "./DataLayer";
-
-
 
 
 //SpotifyAPIの全てを取得
 const spotify = new SpotifyWebApi();
 
+
 function App() {
   const [token, setToken] = useState(null);
-  // 要確認
   const [{ user }, dispatch] = useDataLayerValue();
-
-  
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -32,7 +27,6 @@ function App() {
     if (_token) {
       setToken(_token);
       spotify.setAccessToken(_token);
-      console.log("_token",_token)
 
       spotify.getMe().then((user) =>  {
         dispatch({
@@ -54,12 +48,8 @@ function App() {
           featuredplaylists: featuredplaylists,
         });
       });
-
-      
-
     }
     
-
   }, [token, dispatch]);
 
  

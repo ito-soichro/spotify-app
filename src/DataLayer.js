@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useReducer } from "react";
 
-
-  // 用意確認
 export const DataLayerContext = createContext();
 
 export const DataLayer = ({initialState, reducer, children }) => {
@@ -12,4 +10,3 @@ export const DataLayer = ({initialState, reducer, children }) => {
 )};
 
 export const useDataLayerValue = () => useContext(DataLayerContext);
-// console.log("useDataLayerValue",useDataLayerValue)

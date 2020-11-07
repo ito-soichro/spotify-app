@@ -3,13 +3,7 @@
   place-items: center;
   height: 100vh;
   background-color: black;
-
 }
-
-.login > img {
-  width: 100%;
-}
-
 
 .login > a {
   padding:20px;
@@ -19,4 +13,3 @@
   color: white;
   text-decoration: none;
 }
-

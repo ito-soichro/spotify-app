@@ -1,6 +1,6 @@
 import React from 'react'
-import "../pages/SearchResult.css";
-import { useDataLayerValue } from "../DataLayer";
+import "../search/SearchResult.css";
+import { useDataLayerValue } from "../../DataLayer";
 import { useHistory } from 'react-router-dom'
 // import { getTokenFromUrl } from '../spotify';
 import SpotifyWebApi from "spotify-web-api-js";
@@ -39,14 +39,14 @@ function SearchResult({images,name,id}) {
     <div className="featuredPlaylists" onClick={getSearchPlaylists}>    
       <Link onClick={getPlatlistId}>
        {images[0] ? (
-        <div className="a">
-         <img  src={images[0].url} alt="" height="200" width="200"/>
+        <div className="display_img">
+         <img src={images[0].url} alt="" height="200" width="200"/>
          <div className="featuredPlaylists__playlists" >
           <h2>{name}</h2>
         </div>
         </div>
         ) : (
-        <div className="b" >
+        <div className="no_img" >
           <img src="https://www.e-uchina.net/asset/front/img/no-thumbnail.jpg" alt="" height="200" width="200"/>
           <div className="featuredPlaylists__playlists" >
           <h2>{name}</h2>

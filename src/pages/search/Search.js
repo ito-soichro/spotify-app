@@ -1,7 +1,7 @@
 import React from 'react'
-import Sidebar from "../Sidebar";
-import SearchBody from '../pages/SearchBody';
-import Footer from '../Footer';
+import Sidebar from "../../components/sidebar/Sidebar";
+import SearchBody from '../search/SearchBody';
+import Footer from '../../components/footer/Footer';
 
 
 

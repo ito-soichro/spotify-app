@@ -1,12 +1,11 @@
 import React from 'react'
-import Header from '../Header';
-import "../pages/SearchBody.css"
-import { useDataLayerValue } from '../DataLayer'
-import SearchResult  from '../pages/SearchResult'
+import Header from '../../components/header/Header';
+import "../search/SearchBody.css"
+import { useDataLayerValue } from '../../DataLayer'
+import SearchResult from '../search/SearchResult'
 
 function SearchBody({spotify}) {
   const [{ search },dispatch] = useDataLayerValue();
-console.log("searchの中身",search )
   return (
     <div className="SearchBody">
       <Header spotify={spotify} />

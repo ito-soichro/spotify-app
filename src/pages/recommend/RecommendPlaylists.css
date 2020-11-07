@@ -5,7 +5,11 @@
   background-color:  rgb(30, 30, 30);
   width: 200px;
   height: 300px;
-  
+}
+
+.featuredPlaylists__playlists{
+  text-decoration: none;
+  color: white;
 }
 
 .featuredPlaylists:hover {
@@ -14,7 +18,3 @@
   opacity: 0.8;
 }
 
-.featuredPlaylists__playlists{
-  text-decoration: none;
-  color: white;
-}

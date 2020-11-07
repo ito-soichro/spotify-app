@@ -3,11 +3,9 @@ export const initialState = {
   playlists: [],
   playing: false,
   item: null,
-  
-  // 開発が終了したら削除...
-  token: 
-  'BQCzSl7JH5PszjuUsiQ5lDrfEvIQ2-ez741VscYadixGozpMOkX62wL0VgG3wjPTmmSjPrfb_bcKc6zdAhReJe9qPhoHwaCpPwJacFbzD0MOU1eeAhQd6pbt-IgMrb4TbUkWkJKKBvLV4W9Er1vQnCaejZz8Dx3jZMwhzxtJfPfyHVkbqonX',
 };
+
+
 
 const reduser = (state, action) => {
  

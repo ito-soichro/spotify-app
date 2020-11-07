@@ -1,22 +1,18 @@
 import React from 'react'
-import "../pages/FeaturedListBody.css"
-import Header from '../Header';
-import SongRow from "../SongRow";
-import { useDataLayerValue } from "../DataLayer";
+import "../../pages/recommend/RecommendListBody.css"
+import Header from '../../components/header/Header';
+import SongRow from "../../components/songplay/SongRow";
+import { useDataLayerValue } from "../../DataLayer";
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
-
-
-function FeaturedListBody({spotify}) {
-  const [{ featuredtracks } , dispatch] = useDataLayerValue();
+function SearchPlaylist({spotify}) {
+  const [{ searchplaylist } , dispatch] = useDataLayerValue();
 
   const playPlaylist = () => {
-    
-
     spotify.play({
-      context_uri: `spotify:playlist:${featuredtracks?.id}`,
+      context_uri: `spotify:playlist:${searchplaylist?.id}`,
     })
     
     .then((res) => {
@@ -54,22 +50,21 @@ function FeaturedListBody({spotify}) {
   };
   
 
-
   return (
     <div className="FeaturedListBody"  >
       <Header spotify={spotify} />
       <div className="body__info">
       <img 
-          src={featuredtracks?.images[0].url}
+          src={searchplaylist?.images[0].url}
           alt=""
           />
        <div className="body__infoText">
           <strong>PLAYLIST</strong>
-          <h2>{featuredtracks?.name}</h2>
-          <p>{featuredtracks?.description}</p>
+          <h2>{searchplaylist?.name}</h2>
+          <p>{searchplaylist?.description}</p>
         </div>
       </div>
-      <div classname="body__songs">
+      <div className="body__songs">
         <div className="body__icons">
           <PlayCircleFilledIcon 
             className="body__shuffle"
@@ -78,15 +73,15 @@ function FeaturedListBody({spotify}) {
           <FavoriteIcon fontSize="large"/>
           <MoreHorizIcon />
         </div>
-          {featuredtracks?.tracks.items.map((item) => (
+          {searchplaylist?.tracks.items.map((item) => (
             <SongRow 
             playSong={playSong} 
              track={item.track} 
              />
             ))}
       </div>
-    </div>
+    </div> 
   )
 }
 
-export default FeaturedListBody
+export default SearchPlaylist

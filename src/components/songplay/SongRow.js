@@ -1,12 +1,7 @@
 import React from 'react'
 import "./SongRow.css";
 
-
 function SongRow({ track , playSong}) {
-  // console.log('画像確認',track.album.images[0].url)
-  // console.log('名前確認',track)
-
-
   return (
     <div className="songRow" onClick={() => playSong(track.id)}>
       <img className="songRow__album" src={track.album.images[0].url} alt="" />
