@@ -64,24 +64,22 @@ function SearchPlaylist({spotify}) {
           <p>{searchplaylist?.description}</p>
         </div>
       </div>
-      <div className="body__songs">
-        <div className="body__icons">
-          <PlayCircleFilledIcon 
-            className="body__shuffle"
-            onClick={playPlaylist}
-          />
-          <FavoriteIcon fontSize="large"/>
-          <MoreHorizIcon />
-        </div>
-          {searchplaylist?.tracks.items.map((item) => (
-            <SongRow 
-            playSong={playSong} 
-             track={item.track} 
-             />
-            ))}
+      <div className="body__icons">
+        <PlayCircleFilledIcon 
+          className="body__shuffle"
+          onClick={playPlaylist}
+        />
+        <FavoriteIcon fontSize="large"/>
+        <MoreHorizIcon />
       </div>
-    </div> 
-  )
+        {searchplaylist?.tracks.items.map((item) => (
+          <SongRow 
+          playSong={playSong} 
+            track={item.track} 
+            />
+          ))}
+      </div> 
+    )
 }
 
 export default SearchPlaylist

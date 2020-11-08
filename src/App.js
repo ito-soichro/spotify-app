@@ -14,11 +14,11 @@ import { useDataLayerValue }  from "./DataLayer";
 //SpotifyAPIの全てを取得
 const spotify = new SpotifyWebApi();
 
-
 function App() {
   const [token, setToken] = useState(null);
   const [{ user }, dispatch] = useDataLayerValue();
 
+  
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
@@ -66,8 +66,8 @@ function App() {
         </Switch>
       </Router>
       :  
-     <Login />  
-     }    
+      <Login />  
+    }    
     </div>
 
   );
