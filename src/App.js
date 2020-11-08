@@ -49,10 +49,8 @@ function App() {
         });
       });
     }
-    
   }, [token, dispatch]);
 
- 
   return (
     <div className="App" >
     { token ? 
@@ -69,7 +67,6 @@ function App() {
       <Login />  
     }    
     </div>
-
   );
 }
 

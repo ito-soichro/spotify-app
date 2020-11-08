@@ -40,11 +40,10 @@ function SidebarOption({title, Icon, id}) {
   };
 
   return (
-    
-      <div onClick={() => showPlaylist(id)} className="sidebarOption">
-        {Icon && <Icon className="sidebarOption__icon"/>}
-        {Icon ? <h4 to="/home">{title} </h4> : <p> {title} </p>}
-      </div>
+    <div onClick={() => showPlaylist(id)} className="sidebarOption">
+      {Icon && <Icon className="sidebarOption__icon"/>}
+      {Icon ? <h4 to="/home">{title} </h4> : <p> {title} </p>}
+    </div>
   );
 }
 

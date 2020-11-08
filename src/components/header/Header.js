@@ -35,8 +35,8 @@ function Header() {
     <div className="header__left">
       <form className="header__from" onSubmit={ handleSubmit }>
         <input
-            placeholder="Search"
-            type="text"
+          placeholder="Search"
+          type="text"
             onChange={e => {
               e.preventDefault()
               let value =  e.target.value
@@ -44,11 +44,10 @@ function Header() {
                   dispatch({
                   type: "SET_SEARCHARTISTS",
                   search: search,
+                  });
                 });
-                }
-                );
-            }} 
-          />
+            }}
+        />
         <button type="submit"><SearchIcon /></button>
       </form>
     </div>

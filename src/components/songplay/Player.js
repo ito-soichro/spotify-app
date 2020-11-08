@@ -8,11 +8,11 @@ import Footer from '../../components/footer/Footer';
 function Player({ spotify }) {
   return (
     <div className="player">
-        <div className="player__body">
-          <Sidebar />
-          <Body spotify={spotify}/>
-        </div>
-        <Footer spotify={spotify}/>
+      <div className="player__body">
+        <Sidebar />
+        <Body spotify={spotify}/>
+      </div>
+      <Footer spotify={spotify}/>
     </div>
   )
 }
