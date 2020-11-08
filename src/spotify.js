@@ -4,8 +4,6 @@ export const authEndpoint =
 "https://accounts.spotify.com/authorize";
 
 
-
-
 // // Spotify for Developerから引用
 const redirectUri = process.env.REACT_APP_REDIRECT_URI;
 
