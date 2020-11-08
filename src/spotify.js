@@ -7,7 +7,8 @@ export const authEndpoint =
 
 
 // // Spotify for Developerから引用
-const redirectUri = process.env.REACT_APP_REDIRECT_URI;
+// const redirectUri = process.env.REACT_APP_REDIRECT_URI;
+const redirectUri = "http://localhost:3000/";
 
 const clientID = process.env.REACT_APP_CLIENT_ID;
 
